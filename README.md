@@ -1,3 +1,9 @@
+# Table of Contents
+- [MongoDB Connection in PHP](#mongodb-connection-in-php)
+- [MySQL Connection in PHP using XAMPP](#mysql-connection-in-php-using-xampp)
+
+---
+
 # **PHP & MySQL Connection with XAMPP (Windows)**
 
 ## **🔹 Step 1: Install XAMPP**
