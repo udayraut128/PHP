@@ -1,0 +1,139 @@
+const phpCode = {
+  openingTag: `<?php // begin with a PHP open tag.`,
+  echoStatement: `echo "Hello World\n";`,
+  printStatement: `print("Hello quickref.me");`,
+  closingTag: `?>`,
+  phpRunCommand: `$ php hello.php`,
+  variables: {
+    boolean1: `$boolean1 = true;`,
+    boolean2: `$boolean2 = True;`,
+    integer: `$int = 12;`,
+    float: `$float = 3.1415926;`,
+    unsetFloat: `unset($float);  // Delete variable`,
+    string1: `$str1 = "How are you?";`,
+    string2: `$str2 = 'Fine, thanks';`
+  },
+  strings: {
+    url: `$url = "quickref.me";`,
+    echoString: `echo "I'm learning PHP at $url";`,
+    concatenate: `echo "I'm learning PHP at " . $url;`,
+    helloWorld: `$hello = "Hello, ";
+$hello .= "World!";
+echo $hello;   # => Hello, World!`
+  },
+  arrays: {
+    defineArray: `$num = [1, 3, 5, 7, 9];`,
+    modifyArray: `$num[5] = 11;`,
+    unsetElement: `unset($num[2]);    // Delete variable`,
+    printArray: `print_r($num);     # => 1 3 7 9 11`,
+    countArray: `echo count($num);  # => 5`
+  },
+  operators: {
+    defineVars: `$x = 1;
+$y = 2;`,
+    sumOperation: `$sum = $x + $y;
+echo $sum;   # => 3`
+  },
+  include: {
+    varsPhp: `<?php // begin with a PHP open tag.
+$fruit = 'apple';
+echo "I was imported";
+return 'Anything you like.';
+?>`,
+    testPhp: `<?php
+include 'vars.php';
+echo $fruit . "\n";   # => apple
+require 'vars.php';
+include('vars.php');
+require('vars.php');
+include 'http://x.com/file.php';
+$result = include 'vars.php';
+echo $result;  # => Anything you like.
+?>`
+  },
+  functions: {
+    addFunction: `function add($num1, $num2 = 1) {
+    return $num1 + $num2;
+}
+echo add(10);    # => 11
+echo add(10, 5); # => 15`
+  },
+  comments: {
+    shellComment: `# This is a one line shell-style comment`,
+    cppComment: `// This is a one line c++ style comment`,
+    multiLineComment: `/* This is a multi line comment
+   yet another line of comment */`
+  },
+  constants: {
+    defineConst: `const MY_CONST = "hello";
+echo MY_CONST;   # => hello`,
+    echoConst: `echo 'MY_CONST is: ' . MY_CONST;`
+  },
+  classes: {
+    studentClass: `class Student {
+    public function __construct($name) {
+        $this->name = $name;
+    }
+}
+$alex = new Student("Alex");`
+  },
+  conditionals: {
+    ifElse: `$a = 10;
+$b = 20;
+if ($a > $b) {
+    echo "a is bigger than b";
+} elseif ($a == $b) {
+    echo "a is equal to b";
+} else {
+    echo "a is smaller than b";
+}`,
+    switchCase: `$x = 0;
+switch ($x) {
+    case '0':
+        print "it's zero";
+        break;
+    case 'two':
+    case 'three':
+        // do something
+        break;
+    default:
+        // do something
+}`
+  },
+  loops: {
+    whileLoop: `$i = 1;
+while ($i <= 5) {
+    echo $i++;
+}`,
+    doWhileLoop: `$i = 1;
+do {
+    echo $i++;
+} while ($i <= 5);`,
+    forLoop: `for ($i = 1; $i <= 5; $i++) {
+    echo $i;
+}`,
+    breakExample: `for ($i = 1; $i <= 5; $i++) {
+    if ($i === 4) {
+        break;
+    }
+    echo $i;
+}`,
+    continueExample: `for ($i = 1; $i <= 5; $i++) {
+    if ($i === 4) {
+        continue;
+    }
+    echo $i;
+}`
+  },
+  functionExamples: {
+    returnValues: `function square($x) {
+    return $x * $x;
+}
+echo square(4);  # => 16`,
+    anonymousFunction: `$greet = function($name) {
+    printf("Hello %s\r\n", $name);
+};
+$greet('World'); # => Hello World
+$greet('PHP');   # => Hello PHP`
+  }
+};
