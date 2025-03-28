@@ -123,3 +123,84 @@ $conn->close();
 
 Now your **PHP & MySQL** setup with XAMPP is complete! 🚀
 
+
+
+
+
+# Connecting MongoDB with PHP using XAMPP on Windows
+
+## Prerequisites
+- Install **XAMPP** (Apache + PHP + MySQL) from [Apache Friends](https://www.apachefriends.org/)
+- Install **MongoDB Community Edition** from [MongoDB Download Center](https://www.mongodb.com/try/download/community)
+- Install **MongoDB Compass** (optional, for GUI management)
+- Install **Composer** from [getcomposer.org](https://getcomposer.org/)
+
+## Step 1: Start MongoDB Server
+1. Open Command Prompt and navigate to MongoDB's installation directory:
+   ```sh
+   cd C:\Program Files\MongoDB\Server\6.0\bin
+   ```
+2. Start the MongoDB service:
+   ```sh
+   mongod
+   ```
+
+## Step 2: Install MongoDB PHP Driver
+1. Open Command Prompt and navigate to your PHP project directory:
+   ```sh
+   cd C:\xampp\htdocs\your_project
+   ```
+2. Run the following command to install the MongoDB PHP driver using Composer:
+   ```sh
+   composer require mongodb/mongodb
+   ```
+
+## Step 3: Configure PHP for MongoDB
+1. Open **php.ini** file (located at `C:\xampp\php\php.ini`).
+2. Find and enable the MongoDB extension by adding the following line:
+   ```ini
+   extension=mongodb
+   ```
+3. Restart Apache from the XAMPP Control Panel.
+
+## Step 4: Create a PHP Script to Connect to MongoDB
+Create a file named `index.php` in your project directory (`C:\xampp\htdocs\your_project`):
+
+```php
+<?php
+require 'vendor/autoload.php';
+use MongoDB\Client;
+
+// Create MongoDB connection
+$client = new Client("mongodb://localhost:27017");
+
+// Select database and collection
+$db = $client->user;
+$collection = $db->users;
+
+// Insert data
+$collection->insertOne(["name" => "John Doe", "age" => 25, "email" => "john@example.com"]);
+
+echo "User added successfully!";
+?>
+```
+
+## Step 5: Run the PHP Script
+1. Start Apache from the **XAMPP Control Panel**.
+2. Open a web browser and go to:
+   ```
+   http://localhost/your_project/index.php
+   ```
+3. You should see `User added successfully!`
+
+## Troubleshooting
+- If you get an error **Class 'MongoDB\Client' not found**, ensure that:
+  - `composer require mongodb/mongodb` was executed in the correct directory.
+  - The `vendor` folder exists in your project.
+  - The `php.ini` file has `extension=mongodb` enabled.
+  - Apache has been restarted after making changes.
+
+## Conclusion
+You have successfully connected MongoDB with PHP using XAMPP on Windows! 🚀
+
+
