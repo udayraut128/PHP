@@ -1,6 +1,6 @@
 # Table of Contents
-- [MongoDB Connection in PHP](#mongodb-connection-in-php)
-- [MySQL Connection in PHP using XAMPP](#mysql-connection-in-php-using-xampp)
+- [MySQL Connection in PHP using XAMPP](#PHP-&-MySQL-Connection-with-XAMPP-(Windows))
+- [MongoDB Connection in PHP](#Connecting-MongoDB-with-PHP-using-XAMPP-on-Windows)
 
 ---
 
